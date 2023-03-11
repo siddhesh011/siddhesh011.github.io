@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   
+    <title>1854 Broad Street Cholera Outbreak Visualization by Balaji Solanki</title>
+
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png"> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+
+<body>
+  <!-- navigation bar code -->
+   <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container">
+                   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="index.html"><img width="30px;" height="20px;" src="img/house-solid.svg">Home</a></li>
+                        <li><a href="documentation.html"><img width="30px;" height="20px;" src="img/file-solid.svg">Documentation</a></li>
+                        <li><a href="video_link.html"><img width="30px;" height="25px;"  src="img/youtube.svg">   Video</a></li> 
+                    </ul>
+                </div>
+            </div>
+    </header>
+     <div class="container">
+                <p style="font-size:20px; ">As a web developer I was very excited to recreate the visualization done by Dr john snow the map of London's 1854 cholera epidemic . I read the article that described how john snow established the relationship between contaminated water and cholera. </p>
+
+                <p style="font-size:20px;">First i decided to make soho london street map using provided data files.<ul>
+                    <li style="font-size: 20px">The <b>streets.json</b> file provides x-axis and y-axis coordinates for streets. Array's inside file provides streets.</li>
+                    <li style="font-size: 20px">The <b>deathdays.csv</b> gives the information about number of deaths for each day during the outbreak from 19-Aug to 29-Sep.</li>
+                <li style="font-size: 20px">the <b>death_age_sex.csv</b> provides information about age and sex of the victim with (X,Y) cordinates of each death.</li>
+            <li style="font-size: 20px">The <b>pumps.csv</b> gives X and Y cordinates of pump on street map.</li>
+        </ul>  </p>
+        <p style="font-size: 20px;">I created street map using JSON file coordinates which indicates streets on Soho area of london. I read the<a href="https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak"> wikipedia</a> to know more about the visualization.To obtain further information about the visualization, it should be noted that the map displays demarcations of deceased individuals, distinguished by the color blue for males and orange for females. Additionally, the map highlights the locations of Pump, denoted by the color red, breweries marked with light blue, and workhouses represented by the color green.</p>
+        <p style="font-size: 20px;">As per instructions I made the visualization layout on paper before entering into actual CSS, HTML and PHP. The image below illustrates the basic layout of visualisation design.</p>
+
+   <h3 style="text-align: center;">John Snow's London Street Map.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Basic dashboard design idea</h3>
+
+<div class="row"> <img width="500" height="500" src="img/map.jpg"> <img width="600" height="500" src="img/draw.jpg"></div>
+<br><br>
+<p style="font-size: 20px;">The line chart has capability to reveal patterns, diffrenet kind of trends and changes in given data. This qualities of line chart makes easier to understand how a particular data set has evolved over time & identify trends later. Moreover, line charts are particularly effective in highlighting trends, making it easy to identify whether a trend is increasing or decreasing over time.To observe the deaths over the period time during pandemic,line chart is created which shows the number of deaths over time. the x-axis is representing time and the y-axis representing the number of deaths</p>
+<p style="font-size: 20px;"> To fill colors in developed visualisation we have a inbuild scheme provided by d3 js. There are multiple color schemes like ssssd3.scaleLinear(), d3.scaleLog(), d3.scaleTime(), d3.scaleOrdinal(), d3.scaleThreshold(), d3.scaleSqrt(). However, some color scheme are designed to be accessible to both normal and colorblind users. they include d3.schemeTableau10, d3.scaleOrdinal(),schemeCategory10. I used <b>d3.schemeTableau10 and d3.scaleOrdinal()</b> This color scheme consists of 10 colors that are designed to be visually distinct from one another, and have been tested to work well for people with different types of color vision deficiencies</p>
+<p style="font-size: 20px;">To observe the deaths by sex and age group , initial idea was to create a bar chart but later i came on conclusion Pie charts can be more useful to display age data because they allow user to visualize the distribution of ages in a clear and concise way. Pie charts are particularly useful when you want to compare the relative sizes of different age groups. </p>
+<br>
+<p style="font-size: 20px"><b>Findings From Visualization</b></p>
+<p style="font-size: 20px">The timeline chart shows the number of deaths from 19 Aug to 29 Sep. The highest number of people died on 1 sep which is almost 140+. after that graph started decreasing. Last death reported at 27 sep.</p><br>
+<img width="1200" height="500" src="img/Screenshot (197).png"><!-- <img width="600" height="500" src="img/Screenshot (185).png"> -->
+<p style="font-size: 20px">The pie chart illustrates a nearly equivalent percentage of male and female died during the cholera outbreak. The age group with the highest recorded number of deaths was individuals aged 80 and above, followed by children aged 0 to 10 years and senior citizens aged 61 to 80 years old.</p>
+<p style="font-size: 20px">The Screenshot Below shows the deaths on 1 sep. Both map and pie chart is showing data for 1st sep as a part of interactive visualization design </p>
+<img width="1200" height="500" src="img/Screenshot (198).png">
+<br><br>
+<p style="font-size: 20px">The Screenshot Below shows the deaths for males in steet map which change due to on hover function on pie chart</p>
+<br>
+<img width="1200" height="500" src="img/Screenshot (200).png">
+
+<p style="font-size: 20px"><b>Citations</b></p>
+<ul>
+<li style="font-size: 20px"><a href="https://d3js.org/">https://d3js.org/</a></li>
+<li style="font-size: 20px"><a href="https://d3-graph-gallery.com/">https://d3-graph-gallery.com/</li>
+<li style="font-size: 20px"><a href="https://www.w3schools.com/js/js_graphics_d3js.asp">https://www.w3schools.com/js/js_graphics_d3js.asp</a></li>
+<li style="font-size: 20px"><a href="https://fontawesome.com/">https://fontawesome.com/</a></li>
+<li style="font-size: 20px"><a href="https://chartio.com/resources/tutorials/how-to-show-data-on-mouseover-in-d3js/">https://chartio.com/resources/tutorials/how-to-show-data-on-mouseover-in-d3js/</a></li>
+<li style="font-size: 20px"><a href="https://d3-graph-gallery.com/graph/interactivity_tooltip.html">https://d3-graph-gallery.com/graph/interactivity_tooltip.html</a></li>
+<li style="font-size: 20px"><a href="https://www.geeksforgeeks.org/d3-js-schemetableau10-method/">https://www.geeksforgeeks.org/d3-js-schemetableau10-method/</a></li>
+<li style="font-size: 20px"><a href="https://www.youtube.com/">https://www.youtube.com/</a></li>
+
+
+    </ul>
+            </div>
+   
+</body>
+</html>
