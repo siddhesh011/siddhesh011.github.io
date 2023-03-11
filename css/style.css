@@ -1,0 +1,84 @@
+
+
+
+/*css for body container*/
+body .container {
+        margin-left: 3.1vw;
+        margin-right: 3.1vw;
+        width: 94vw;
+}
+
+.flex {
+        display: flex;
+}
+
+.flex .panel {
+        width: -webkit-fill-available;
+        ;
+}
+
+/*font size not workiing .. . */
+
+html {
+    font-size: 14px;
+}
+
+    html {
+        font-size: 16px;
+    }
+
+
+
+
+
+.screen-overlay {
+        display: none;
+    }
+
+
+
+.screen-overlay {
+       display: table;
+  }
+
+
+
+
+
+.align-center {
+    text-align: -webkit-center;
+}
+
+.tooltip {
+    background-color: #020202;
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+
+
+
+
+.arc {
+    opacity: 0.5;
+    stroke: #ddd;
+    stroke-width: 0.5px;
+    cursor: pointer;
+}
+
+/*text inside arc piechart*/
+.arc-text,
+.arc-percentage {
+    text-anchor: middle;
+    pointer-events: none;
+    font-size: 12px;
+    
+}
+/*css for streets on map */
+.street {
+    fill: #042404;
+    font-weight: bold;
+    font-size: 15px;
+}
+
