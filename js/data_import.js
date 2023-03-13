@@ -1,4 +1,4 @@
-
+//defining array for each object. . . . . .
 var data = {
     data_death: [],
     data_pumps: [],
@@ -6,15 +6,17 @@ var data = {
     deaths_age_sex: [],
     Reduced_data_streets: [],
 
+// loding data from csv files . . . . 
     loadData: async (callback) => {
         data.data_pumps = await d3.csv("data/pumps.csv");
         data.deaths_age_sex = await d3.csv("data/deaths_age_sex.csv");
         data.data_streets = await d3.json("data/streets.json");
         data.data_death = await d3.csv("data/deathdays.csv");
 
+//not null checking + length shuld be grater tha zero . . . . .
         if (data.data_streets && data.data_streets.length > 0) {
             data.Reduced_data_streets = data.data_streets.reduce((prev, curr) => prev.concat(curr), []);
-
+// set index . . . . . . 
             var index = 0;
 
             if (data.data_death && data.data_death.length > 0) {
@@ -23,19 +25,21 @@ var data = {
                     var countOfDeaths = item.deaths;
                     while (countOfDeaths > 0 && index < data.deaths_age_sex.length) {
                         data.deaths_age_sex[index].date = time_format(new Date(item.date + '-' + config.year));
-                        
+                        //decrement the death count + increment index . . .  . .
                         countOfDeaths--;
                         index++;
                     }
                 });
-
+             //callback function .. . . 
                 callback(data.data_streets);
             }
         }
     }
 };
 
-//shape util
+//shape util . . . . . . 
+
+// setting the dimentions . . . . . . . . 
 var config = {
     year: 1850,
     dimensions: {
@@ -49,7 +53,7 @@ var config = {
     },
     map_label: ["Male", "Female", "Pump", "Brewery", "Work House"]
 }
-
+//color scale . . . . .  .
 var utility_shapes = {
     mapLegendColorScale: (label) => {
         return d3.scaleOrdinal()
@@ -57,7 +61,7 @@ var utility_shapes = {
             // .range(d3.schemeSet3)(label);
              .range(d3.schemeTableau10)(label);
     },
-
+// coordinates . . . . . 
     x: (x) => {
         return d3.scaleLinear()
             .domain(d3.extent(data.Reduced_data_streets, (d) => d.x))
@@ -79,7 +83,7 @@ var utility_shapes = {
     removeSvgGroup: (selector) => {
         d3.select(selector).remove();
     },
-
+// tooltip display . . . . *
     tooltip: {
         div: d3.select(".container")
             .append("div")
