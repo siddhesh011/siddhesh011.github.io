@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Documentation Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		/* Style the images */
+		img {
+			max-width: 100%;
+			height: auto;
+			display: block;
+			margin: auto;
+			padding: 20px 0;
+		}
+		/* Style the image captions */
+		figcaption {
+			font-style: italic;
+			text-align: center;
+			margin-top: 10px;
+		}
+		/* Style the container for the images and captions */
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			margin: 20px 0;
+		}
+		/* Style the documentation section */
+		.documentation {
+			max-width: 800px;
+			margin: auto;
+			padding: 20px;
+		}
+		/* Style the headings */
+		h1, h2 {
+			text-align: center;
+			margin-top: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="documentation">
+		<h1 style="color: steelblue;">Analysis of Health Survey Data of the United States </h1>
+		<p style="text-align: center; color: orange;">Anuja Sawant (ansawant), Siddhesh Chavan (sschavan), Ashok Dattla (adattla) </p>
+		
+		<h2 style="color: steelblue;">Introduction </h2>
+		<p>The Behavioral Risk Factor Surveillance System (BRFSS) is a public health survey conducted every year by the Centers for Disease Control and Prevention (CDC) in the United States. It is one of the largest telephonic surveys which collects data on health-related behaviors, chronic condition, and preventive health practices among adults. It contains information on factors such as smoking, alcohol consumption, physical activity, diet, and mental health. It also includes data on demographic characteristics such as age, sex, race/ethnicity, education, and income. The data is a valuable resource for researchers, policymakers and public health officials interested in studying and addressing various health issues in the US population. 
+
+The idea behind working on this data is to find out the percentage of people affected by poor health behavior. As this is a recent survey data, we focused on different health-related trends. Also, we assume that our analysis will help people take some preventive measures in order to avoid future health issues as well as the new generation from affecting from different health-related risk factors. </p>
+		<div class="container">
+			<img src="img/intro.png" width="700" alt="Image 1">
+			<!-- <figcaption>Description of Image 1</figcaption> -->
+		</div>
+		
+		<h2 style="color: steelblue;">Data description </h2>
+		<p>BRFSS is a publicly available data downloaded from CDC website. It is a direct survey data collected over telephone and recorded in the csv format. It contains following details:
+		<ul>
+		<li>Dataset Link: BRFSS data </li>
+		<li>Total Records: 2.2 M </li>
+		<li>Columns: 27 </li>
+		<li>Year: 2011 to 2021 </li> 
+		<li>Location: 50 states, district of Columbia and 3 U.S. territories </li>
+		</ul> </p>
+		<div class="container">
+			<img src="img/Screenshot (230).png" alt="Image 2">
+			<figcaption></figcaption>
+		</div>
+	<!-- 	<h2 style="color: steelblue;">Data description </h2>
+		<p> Data Understanding 
+
+While going through the data to identifying relevant column, we discovered key indicators by plotting few graphs. </p>
+		<div class="container">
+			<img src="img/Class Distribution.png" width="700" alt="Image 3">
+			<figcaption>Description of Image 3</figcaption>
+		</div>
+ -->
+          <h2 style="color: steelblue;">Findings From Analysis</h2>
+		<p>Based on the presented bar graph, it can be observed that the age group ranging from 25-34 years old has the highest percentage of alcohol consumption, followed by the other age groups. Interestingly, the 65+ and 18-24 age groups have a similar percentage of drinking habits, both around 11.5 percent.
+
+In addition, the map demonstrates the distribution of alcohol consumption, with Nebraska appearing to be the highest consumer of alcohol, while Nevada has one of the lowest rates. Such insights into alcohol consumption patterns can be valuable for informing public health policies and interventions.</p>
+		<div class="container">
+			<img src="img/Class Distribution.png" width="700" alt="Image 3">
+			<figcaption>Description of Image 3</figcaption>
+		</div>    
+
+	</div>
+	<script>
+		/* Add JavaScript here if needed */
+	</script>
+</body>
+</html>
